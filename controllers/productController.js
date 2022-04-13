@@ -4,6 +4,9 @@ const controlador= {
     },
     edit : (req,res)=>{
         res.render("product-edit")
+    },
+    add : (req,res)=>{
+        res.render("product-add")
     }
 };
 
