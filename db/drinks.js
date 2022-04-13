@@ -1,1 +1,1 @@
-const array = require('./data.json')
+const array = require('./data.js')
