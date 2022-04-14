@@ -27,7 +27,7 @@ app.use('/', indexRouter);
 app.use('/search-results', indexRouter);
 
 
-app.use('/product', productsRouter);
+app.use('/products', productsRouter);
 app.use('/product/edit', productsRouter);
 app.use('/product/add', productsRouter);
 app.use('/profile', usersRouter);

@@ -2,6 +2,7 @@
 var drinks = require('../db/drinks');
 
 const controlador= {
+    
     detail : (req,res)=>{
         res.render("product")
     },
@@ -11,7 +12,7 @@ const controlador= {
     add : (req,res)=>{
         res.render("product-add")
     },
-    index: function(req, res) {
+    products: function(req, res) {
         if (Object.keys(req.query).length !== 0) return res.send(drinks.findDrinksBy(req.query));
         res.render('products', { drinks: drinks.getAll() });
     },
