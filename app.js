@@ -32,7 +32,7 @@ app.use('/product/edit', productsRouter);
 app.use('/product/add', productsRouter);
 app.use('/profile', usersRouter);
 app.use('/profile/profile',usersRouter);
-app.use('/profile/login', usersRouter);
+app.use('/profile//login', usersRouter);
 app.use('/profile/edit', usersRouter);
 app.use('/profile/register', usersRouter);
 
