@@ -3,7 +3,7 @@ const data = {
       name: "Lionel Andrés Messi",
       phone: "54011845547",
       email: "lamessi@gmail.com",
-      picture: "",
+      picture: "/images/users/messi.jpg",
   }
   ,
     drinks:[

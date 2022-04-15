@@ -1,3 +1,4 @@
+var user = require ('../db/data')
 let controlador = {
     register: (req,res) =>{
         res.render("register")
