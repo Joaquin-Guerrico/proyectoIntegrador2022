@@ -1,8 +1,8 @@
 const data = {
     userInfo: {
-      name: "Ignacio Pehuén Romani",
-      phone: "54011123432",
-      email: "iromani@udesa.edu.ar",
+      name: "Lionel Andrés Messi",
+      phone: "54011845547",
+      email: "lamessi@gmail.com",
       picture: "",
   }
   ,
