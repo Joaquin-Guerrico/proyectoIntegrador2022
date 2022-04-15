@@ -34,10 +34,7 @@ app.use('/profile', usersRouter);
 app.use('/profile/profile',usersRouter);
 app.use('/profile/login', usersRouter);
 app.use('/profile/edit', usersRouter);
-
-
-
-
+app.use('/profile/register', usersRouter);
 
 
 // catch 404 and forward to error handler
