@@ -8,7 +8,7 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title">Nombre del producto</h2> 
+			<h2 class="products-title"><%= drinks[1].title %></h2> 
 			<p class="product-detail-description">
 				<a href="/product/edit">Editar</a>
 			</p>
@@ -19,11 +19,9 @@
 				<article class="col-12 col-lg-8 product-detail-info">
 					
 				<ul>
-					<% for (let i= 0; i < drinks.length; i++) { %>
-					<li class="product-detail-description"><a href="/products/<%= drinks[i].title %>"><%= drinks[i].title %></a>
-						<a href="/products/<%= drinks[i].title %>"><img src="<%= drinks[i].cover %>"></a>
+					<li class="product-detail-description"><br></a>
+						<a href="/products/<%= drinks[1].title %>"><img src="<%= drinks[1].cover %>"></a>
 					</li>
-					<% } %>
 				</ul>
 					
 				</article>
