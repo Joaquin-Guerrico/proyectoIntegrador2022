@@ -18,16 +18,13 @@
 
 				<article class="col-12 col-lg-8 product-detail-info">
 					
-					<% for (let i= 0; i < drinks.length; i++) {
-						if (drinks[i].cover) {%> 
-							<img src="<%= drinks[i].cover%> " width="120"/>
-						<% } %>
-
-						<p class="product-detail-description">
-						<%= drinks[i].description %> </p>  
-						
+				<ul>
+					<% for (let i= 0; i < drinks.length; i++) { %>
+					<li class="product-detail-description"><a href="/products/<%= drinks[i].id %>"><%= drinks[i].description %></a>
+						<a href="/products/<%= drinks[i].id %>"><img src="<%= drinks[i].cover %>"></a>
+					</li>
 					<% } %>
-					
+				</ul>
 					
 				</article>
 
@@ -87,7 +84,8 @@
 		</div>
 	</div>
 	<!-- /product detail -->
-		 footer
+
+	<!-- /footer -->
 	<%- include('./partials/footer.ejs') %> 
-	
+	<!-- /footer -->
 
