@@ -7,8 +7,8 @@ const data = {
   }
   ,
     drinks:[
-    {id: "1", title: "Corona", description: "Cerveza ",   "edition": "Penguin", "price": "$200", cover: "/images/products/product1.jpg"},
-    {id: "2", title: " Branca ", description: "Fernet",   "edition": "Penguin", "price":  "$999", cover: "/images/products/product2.jpg"},
+    {id: "1", title: "Corona", description: "Cerveza ", "price": "$200", cover: "/images/products/product1.jpg"},
+    {id: "2", title: "Fernet Branca ", description: "Fernet", "price":  "$999", cover: "/images/products/product2.jpg"},
     {id: "3", title: "Beefeater London ", description: "Dry Gin","price":  "$2.300",cover: "/images/products/product3.jpg"},
     {id: "4", title: "Heneiken ", description: "Cerveza", "price":  "$250",cover: "/images/products/product4.jpg"},
     {id: "5", title: "Jagermeiter", description: "Licor de Hierbas", "price":  "$3.000",cover: "/images/products/product5.jpg"},
