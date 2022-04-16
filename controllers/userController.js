@@ -7,7 +7,7 @@ let controlador = {
         res.render("profile")
     },
     login: (req,res) =>{
-        res.render("/login")
+        res.render("login")
     },
     edit: (req,res) =>{
         res.render("profile-edit")
