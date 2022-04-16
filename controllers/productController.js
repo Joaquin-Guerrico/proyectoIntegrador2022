@@ -1,6 +1,6 @@
 
 var drinks = require('../db/drinks');
-
+var data = require('../db/data');
 const controlador= {
     
     detail : (req,res)=>{
