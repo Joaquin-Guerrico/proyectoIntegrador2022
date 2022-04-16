@@ -20,8 +20,8 @@
 					
 				<ul>
 					<% for (let i= 0; i < drinks.length; i++) { %>
-					<li class="product-detail-description"><a href="/products/<%= drinks[i].id %>"><%= drinks[i].title %></a>
-						<a href="/products/<%= drinks[i].id %>"><img src="<%= drinks[i].cover %>"></a>
+					<li class="product-detail-description"><a href="/products/<%= drinks[i].title %>"><%= drinks[i].title %></a>
+						<a href="/products/<%= drinks[i].title %>"><img src="<%= drinks[i].cover %>"></a>
 					</li>
 					<% } %>
 				</ul>

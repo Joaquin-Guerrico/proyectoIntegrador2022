@@ -7,13 +7,14 @@ let controlador = {
     //     res.render("profile")
     // },
     profile: function(req, res) {
-        res.render('profile', { user: data.userInfo});
+        res.render('profile', { user: data});
     },
+    
     login: (req,res) =>{
         res.render("login")
     },
     edit: (req,res) =>{
-        res.render("profile-edit")
+        res.render('profile-edit', { user: data.userInfo});
     },
     showUser: function (req, res) {
         let user = '/images/users/messi.jpg';

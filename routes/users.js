@@ -8,7 +8,7 @@ router.get('/profile', userController.profile);
 
 
 router.get('/login', userController.login );
-router.get('./edit', userController.edit);
+router.get('/profile-edit', userController.edit);
 router.get('/register', userController.register);
 
 
