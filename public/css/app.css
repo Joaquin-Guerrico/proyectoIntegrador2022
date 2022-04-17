@@ -85,8 +85,7 @@ h1{
 
 .main-header_home-link,
 .main-header_credit-link {
-  margin-right: 200PX;
-  /* display: block; */
+  display: block;
 }
 
 .main-header_credit-link {
