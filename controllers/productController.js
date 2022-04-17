@@ -11,8 +11,9 @@ const controlador= {
         res.render("product-add")
     },
     products: function (req, res) {
-        res.render('products', {drinks: data.drinks});
-    }
+        res.render('products', {data: data}, );
+    },
+    
    
 };
 

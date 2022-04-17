@@ -21,10 +21,31 @@ const data = {
   ],
   coments: [
     {
-      username:"" ,
-      coment:"" ,
-      picture:"" ,
-    }
+      username:"Rodri De Paul" ,
+      coment:"Excelente producto, lo recomiedo siempre. Es ideal para un tercer tiempo despues de un partido contra Chile, yo lo tomo con coca pero a Leo le gusta con pepsi" ,
+      picture:"/images/users/user1.jpg" ,
+    },
+    {
+      username:"Dibu Martinez" ,
+      coment:"Exquisita bebida, muy relajante despues de un día de muchas atajadas" ,
+      picture:"/images/users/user2.jpg" ,
+    },
+    {
+      username:"El Tucu Correa" ,
+      coment:"	Lorem, ipsum dolor sit amet consectetur adipisicing elit Dolorem commodi officiis cupiditate "  ,
+      picture:"/images/users/user3.jpg" ,
+    },
+    {
+      username:"Fideo Di María" ,
+      coment:"Nada como festejar la copa América con un buen fernet en la mano. Productaso   Lorem, ipsum dolor sit amet consectetur adipisicing elit Dolorem commodi officiis cu" ,
+      picture:"/images/users/user4.jpg" ,
+    },
+    {
+      username:"Lautaro Martinez" ,
+      coment:"Una bebida que acompaña a la selección a todos lados, tan imprenscindible como el mate. Lorem, ipsum dolor sit amet consectetur adipisicing elit Dolorem commodi officiis cu" ,
+      picture:"/images/users/user5.jpg" ,
+    },
+    
   ]
 }
 
