@@ -8,9 +8,10 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"><%= drinks[1].title %></h2> 
+			<h2 class="products-title"><%= data.drinks[1].title %></h2> 
 			<p class="product-detail-description">
-				<a href="/product/edit">Editar</a>
+				<a href="/products/product-edit">Editar</a>
+
 			</p>
 		</div>
 		<div class="product-detail">
@@ -20,7 +21,7 @@
 					
 				<ul>
 					<li class="product-detail-description"><br>
-						<img src="<%= drinks[1].cover %>">
+						<img src="<%= data.drinks[1].cover %>">
 					</li>
 				</ul>
 					
@@ -28,48 +29,20 @@
 
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<article>
-							<img src="https://via.placeholder.com/35" alt="">
+						<% for (let i = 0; i < data.coments.length; i++) { %>
+					<article>
+							<img src=" <%= data.coments[i].picture %>" alt="">
 							<div class="data">
 								<p class="user">
-								<strong> <a href="profile.html">Cristiano Ronaldo:</a> </strong>
-								 Muy rica bebida, recomiendo mezclar con coca y no con pepsi.</p>
+								<strong> <a href="profile.html">  <%= data.coments[i].username %></a> </strong>
+								<%= data.coments[i].coment %></p>
 							</div>
 						</article>
-						<article>
-							<img src="https://via.placeholder.com/35" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="profile.html">Carlos Tevez: </a> </strong>
-									¡Excelente bebida para compartir con amigos en un asadito!</p>
-							</div>
-						</article>
-						<article>
-							<img src="https://via.placeholder.com/35" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="profile.html">Mario Gotze: </a> </strong>
-									La verdad es que no me gustó mucho la bebida, es un poco amarga. Por lo único que la recomedaría es porque ayuda a ir al baño, pero si no, no es de mis bebidas favoritas :(
-									</p>
-							</div>
-						</article>
-						<article>
-							<img src="https://via.placeholder.com/35" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="profile.html">Andrés Iniesta: </a> </strong>
-									Recién visité Argentina y unos amigos. Al principio cuando la probé no me gustó mucho, pero aprendí que con el tiempo se vuelve muy rica. ¡Además se comparte con amigos!</p>
-							</div>
-						</article>
-						<article>
-							<img src="https://via.placeholder.com/35" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="profile.html">Sergio Agüero: </a> </strong>
-									Recuerdo a mi abuela tomarse un trago de fernet para ir al baño, hoy se convirtió en mi bebida favorita para salir de fiesta con amigos :)</p>
-							</div>
-						</article>
+					<% } %> 
 
+
+
+						
 					</section>
 					<form class="form" action="" method="POST">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
