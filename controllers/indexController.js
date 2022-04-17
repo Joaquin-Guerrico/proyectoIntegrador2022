@@ -1,12 +1,12 @@
 // var drinks = require('../db/drinks');
 var data = require('../db/data');
  
-let controlador = {
+const controlador = {
 
-    index: function (req, res) {
+    index:  (req, res) => {
         res.render('index', {drinks: data.drinks});
     },
-    search : function(req, res) {
+    search : (req, res) => {
         res.render("search-results");
       }     
   }

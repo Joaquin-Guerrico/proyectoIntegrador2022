@@ -1,12 +1,10 @@
 var data = require('../db/data');
-let controlador = {
+const controlador = {
     register: (req,res) =>{
         res.render("register")
     },
-    // profile: (req,res) =>{
-    //     res.render("profile")
-    // },
-    profile: function(req, res) {
+    
+    profile: (req, res) => {
         res.render('profile', { user: data});
     },
     
@@ -16,7 +14,7 @@ let controlador = {
     edit: (req,res) =>{
         res.render('profile-edit', { user: data.userInfo});
     },
-    showUser: function (req, res) {
+    showUser:  (req, res) => {
         let user = '/images/users/messi.jpg';
         return res.render ('imagen', { picture: user})
     }
