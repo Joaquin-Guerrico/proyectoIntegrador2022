@@ -27,25 +27,34 @@ const data = {
     },
     {
       username:"Dibu Martinez" ,
-      coment:"Exquisita bebida, muy relajante despues de un día de muchas atajadas" ,
+      coment:"Exquisita bebida, muy relajante despues de un día de muchas atajadas, ayuda a relajar." ,
       picture:"/images/users/user2.jpg" ,
     },
     {
       username:"El Tucu Correa" ,
-      coment:"	Lorem, ipsum dolor sit amet consectetur adipisicing elit Dolorem commodi officiis cupiditate "  ,
+      coment:"	¡Nada como tomar un buen fernet durante un asasdo con amigos! "  ,
       picture:"/images/users/user3.jpg" ,
     },
     {
       username:"Fideo Di María" ,
-      coment:"Nada como festejar la copa América con un buen fernet en la mano. Productaso   Lorem, ipsum dolor sit amet consectetur adipisicing elit Dolorem commodi officiis cu" ,
+      coment:"Nada como festejar la copa América con un buen fernet en la mano. Productaso :)" ,
       picture:"/images/users/user4.jpg" ,
     },
     {
       username:"Lautaro Martinez" ,
-      coment:"Una bebida que acompaña a la selección a todos lados, tan imprenscindible como el mate. Lorem, ipsum dolor sit amet consectetur adipisicing elit Dolorem commodi officiis cu" ,
+      coment:"Una bebida que acompaña a la selección a todos lados, tan imprenscindible como el mate." ,
       picture:"/images/users/user5.jpg" ,
     },
-    
+    {
+      username:"Enrique Casemiro" ,
+      coment:"Honestamente no soy muy fan de esta bebida, si tengo que elegir prefiero siempre una buena cerveza aunque el fernet siempre ayuda a ir al baño." ,
+      picture:"/images/users/user6.jpeg" ,
+    },
+    {
+      username:"Sergio Agüero" ,
+      coment:"¡Mi bebida favorita para salir de fiesta con amigos!" ,
+      picture:"/images/users/user7.jpeg" ,
+    },
   ]
 }
 
