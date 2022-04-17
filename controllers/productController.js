@@ -14,7 +14,7 @@ const controlador= {
     },
     products: function (req, res) {
         res.render('products', {drinks: data.drinks});
-    }
+    },
     // products: function(req, res) {
     //     if (Object.keys(req.query).length !== 0) return res.send(drinks.findDrinksBy(req.query));
     //     res.render('products', { drinks: drinks.getAll() });
