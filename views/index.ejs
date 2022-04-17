@@ -12,7 +12,7 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Novedades</h2>
+				<h2 class='h2' class="products-title">Novedades</h2 class='h2'>
 			</div>
 			<!-- Show the "ultimos" products -->
 				<% for (let i= 0; i < 4; i++) { %>
@@ -25,7 +25,7 @@
 								<img src="<%=drinks[i].cover %>" alt="<%=drinks[i].description %>">
 							</figure>
 							<article class="product-box_data">
-								<h2><%=drinks[i].title %></h2>
+								<h2 class='h2'><%=drinks[i].title %></h2 class='h2'>
 								<p><%=drinks[i].description %></p>
 								<p>Comentarios: 12</p>
 							</article>
@@ -41,7 +41,7 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Más comentados</h2>
+				<h2 class='h2' class="products-title">Más comentados</h2 class='h2'>
 			</div>
 			<% for (let i= 5; i < 9; i++) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
@@ -53,7 +53,7 @@
 									<img src="<%=drinks[i].cover %>" alt="<%=drinks[i].description %>">
 								</figure>
 								<article class="product-box_data">
-									<h2><%=drinks[i].title %></h2>
+									<h2 class='h2'><%=drinks[i].title %></h2 class='h2'>
 									<p><%=drinks[i].description %></p>
 									<p>Comentarios: 12</p>
 								</article>

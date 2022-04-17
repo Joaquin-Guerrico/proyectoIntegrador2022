@@ -27,12 +27,12 @@ const data = {
     },
     {
       username:"Dibu Martinez" ,
-      coment:"Exquisita bebida, muy relajante despues de un día de muchas atajadas" ,
+      coment:"Exquisita bebida, muy relajante despues de un día de muchas atajadasmuy relajante despues de un muy relajante despues de un muy relajante despues de un muy relajante despues de un " ,
       picture:"/images/users/user2.jpg" ,
     },
     {
       username:"El Tucu Correa" ,
-      coment:"	Lorem, ipsum dolor sit amet consectetur adipisicing elit Dolorem commodi officiis cupiditate "  ,
+      coment:"	Lorem, ipsum dolor sit amet consectetur adipisicing elit Dolorem commodi officiis cupiditatemuy relajante despues de un muy relajante despues de un muy relajante despues de un muy relajante despues de un  "  ,
       picture:"/images/users/user3.jpg" ,
     },
     {
