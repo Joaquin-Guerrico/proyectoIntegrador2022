@@ -1,5 +1,6 @@
 /*====== Fonts ======*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 
 /*====== Variables ======*/
@@ -141,13 +142,15 @@ hr {
 }
 
 .left-navbar {
-  font-size: 1.5em;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2em;
   color: #fff;
   font-weight: bold;
   margin-left: 100px;
 }
 .right-navbar {
-  font-size: 1.5em;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2em;
   color: #fff;
   font-weight: bold;
   margin-right: 100px;
@@ -161,6 +164,7 @@ hr {
 
 
 .logout{
+  font-family: 'Bebas Neue', cursive;
   background: transparent;
   border: 0px;
   cursor: pointer;
@@ -352,6 +356,7 @@ hr {
 }
 
 .product-detail-description {
+  font-family: 'Bebas Neue', cursive;
   padding: 15px 15px 15px 40px;
   font-size: 1.8em;
   line-height: 1.5;
