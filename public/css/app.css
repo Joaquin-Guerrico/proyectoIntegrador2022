@@ -85,7 +85,8 @@ h1{
 
 .main-header_home-link,
 .main-header_credit-link {
-  display: block;
+  margin-right: 200PX;
+  /* display: block; */
 }
 
 .main-header_credit-link {
@@ -301,14 +302,12 @@ h1{
 /*====== Footer ======*/
 .nombres{
   font-weight: bold;
-  font-size: 10px;
-  margin-top: 30px;
 }
 .main-footer {
-  padding: 15px 0;
-  background-color: white;
-  /* border-radius:  85% 85% 0 0 / 30%; */
-  font-family: 'Dancing Script', cursive;
+  background-color: #ffffff;
+  padding: 20px 0;
+  margin-top: 80px;
+  border-radius: 85% 85% 0 0 / 30%;
 }
 
 .footer-data {
@@ -320,7 +319,7 @@ h1{
   font-size: 3.5em;
 }
 
-.footer-data h2  {
+.footer-data h2 {
   color: var(--gray);
   font-size: 2.4em;
   font-weight: 400;
@@ -586,6 +585,7 @@ body{height: 900px;}
 
   .main-footer {
     padding: 40px 0;
+    margin-bottom: 0%;
   }
 
   .footer-data {
