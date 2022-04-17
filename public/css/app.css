@@ -1,7 +1,8 @@
 /*====== Fonts ======*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,400;1,300&family=Ubuntu:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@600&family=Raleway:ital,wght@0,200;0,400;1,300&family=Ubuntu:ital@1&display=swap');
 
 /*====== Variables ======*/
 :root {
@@ -67,10 +68,16 @@ hr {
 
 
 /*====== Main Header ======*/
+h1{
+  color: white;
+  text-align: center;
+  font-size: 4rem;
+}
 .main-header {
   padding: 15px 0;
-  background-color: #44737a;
+  background-color: #4e798a;
   border-radius: 0 0 85% 85% / 30%;
+  font-family: 'Dancing Script', cursive;
 }
 
 
@@ -82,7 +89,7 @@ hr {
 }
 
 .main-header_credit-link {
-  font-size: 1.5em;
+  font-size: 1.8em;
   margin-top: 20px;
   text-align: center;
   color: #fff;
@@ -143,14 +150,14 @@ hr {
 
 .left-navbar {
   font-family: 'Bebas Neue', cursive;
-  font-size: 1.5em;
+  font-size: 2em;
   color: #fff;
   font-weight: bold;
   margin-left: 100px;
 }
 .right-navbar {
   font-family: 'Bebas Neue', cursive;
-  font-size: 1.5em;
+  font-size: 2em;
   color: #fff;
   font-weight: bold;
   margin-right: 100px;
@@ -232,7 +239,7 @@ hr {
   flex-wrap: wrap;
 }
 
-.product-box_data h2 {
+.product-box_data h2  {
   font-size: 2.4em;
   font-weight: 300;
   margin: 0;
@@ -292,10 +299,16 @@ hr {
 }
 
 /*====== Footer ======*/
+.nombres{
+  font-weight: bold;
+  font-size: 10px;
+  margin-top: 30px;
+}
 .main-footer {
-  background-color: #ffffff;
-  padding: 20px 0;
-  margin-top: 80px;
+  padding: 15px 0;
+  background-color: white;
+  /* border-radius:  85% 85% 0 0 / 30%; */
+  font-family: 'Dancing Script', cursive;
 }
 
 .footer-data {
@@ -307,7 +320,7 @@ hr {
   font-size: 3.5em;
 }
 
-.footer-data h2 {
+.footer-data h2  {
   color: var(--gray);
   font-size: 2.4em;
   font-weight: 400;
@@ -459,6 +472,15 @@ hr {
 }
 
 /*====== Formularios ======*/
+.forms {
+  font-family : inherit;
+  font-size   : 17px;
+  margin-left: 475px;
+  color: black;
+}
+.formularios{
+  justify-content: center;
+}
 .form-label {
   display: inline-block;
   font-size: 1.6em;
@@ -475,6 +497,7 @@ hr {
   border: none;
   border: solid 1px var(--gray);
   padding: 0 15px;
+  color: #EAC926;
 }
 
 .error{
@@ -550,7 +573,7 @@ body{height: 900px;}
 
   .left-navbar a:hover,
   .right-navbar a:hover {
-    color: var(--light-blue);
+    color: rgb(160, 183, 204);
   }
 
   .left-navbar li {
@@ -568,5 +591,15 @@ body{height: 900px;}
   .footer-data {
     width: 95%;
     margin: auto;
+  }
+  h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+  }
+  p{
+     font-family: 'Raleway', sans-serif;
+  }
+  .ingresar {
+    text-align: center;
   }
 }
