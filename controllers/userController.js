@@ -14,10 +14,10 @@ const controlador = {
     edit: (req,res) =>{
         res.render('profile-edit', { user: data.userInfo});
     },
-    showUser:  (req, res) => {
-        let user = '/images/users/messi.jpg';
-        return res.render ('imagen', { picture: user})
-    }
+    // showUser:  (req, res) => {
+    //     let user = '/images/users/messi.jpg';
+    //     return res.render ('imagen', { picture: user})
+    // }
     
 };
 module.exports = controlador 
