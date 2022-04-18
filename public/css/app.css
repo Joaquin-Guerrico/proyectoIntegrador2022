@@ -68,6 +68,7 @@ hr {
 
 
 /*====== Main Header ======*/
+
 h1{
   color: white;
   text-align: center;
@@ -299,6 +300,10 @@ h1{
 }
 
 /*====== Footer ======*/
+.ig{
+  text-align: right;
+  font-weight: bold;
+}
 .nombres{
   font-weight: bold;
 }
@@ -371,6 +376,9 @@ h1{
   padding: 15px 15px 15px 40px;
   font-size: 1.8em;
   line-height: 1.5;
+}
+.product-detail-description a:hover {
+  color: rgb(160, 183, 204);
 }
 
 .product-detail-price {
