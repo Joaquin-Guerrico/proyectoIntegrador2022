@@ -478,12 +478,7 @@ h1{
 }
 
 /*====== Formularios ======*/
-.forms {
-  font-family : inherit;
-  font-size   : 17px;
-  margin-left: 475px;
-  color: black;
-}
+
 .formularios{
   justify-content: center;
 }
