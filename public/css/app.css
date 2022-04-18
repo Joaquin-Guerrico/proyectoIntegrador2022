@@ -82,8 +82,7 @@ h1{
 
 .main-header_home-link,
 .main-header_credit-link {
-  margin-right: 200PX;
-  /* display: block; */
+  display: block;
 }
 
 .main-header_credit-link {
@@ -294,6 +293,10 @@ h1{
 .product-box:hover i {
   transform: rotate(360deg);
   box-shadow: 0 0 5px var(--green);
+}
+
+.resultado-busqueda{
+  font-size: 20px;
 }
 
 /*====== Footer ======*/
