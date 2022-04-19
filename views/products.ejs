@@ -2,7 +2,6 @@
 
 	<!-- Header -->
 <%- include('./partials/header.ejs') %> 
-
 	<!-- /Header -->
 	
 	<!-- product detail -->
@@ -11,7 +10,6 @@
 			<h2 class='h2' class="products-title" >  <%= data.drinks[1].title %></h2 class='h2'> 
 			<p class="product-detail-description">
 				<a href="/products/product-edit">Editar</a>
-
 			</p>
 		</div>
 		<div class="product-detail">
@@ -40,9 +38,6 @@
 						</article>
 					<% } %> 
 
-
-
-						
 					</section>
 					<form action="/products" method="get" class="form" action="" method="POST">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
