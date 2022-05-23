@@ -661,13 +661,14 @@ body{height: 900px;}
   outline: none;
 }
 
-.button-panel {
+/* .button-panel {
   margin: 2em 0 0;
   width: 100%;
-}
+  color: ;
+} */
 
-.button-panel .button {
-  background: #f16272;
+.button {
+  background: #03264C;
   border: none;
   color: #fff;
   cursor: pointer;
