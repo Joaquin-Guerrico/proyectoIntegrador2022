@@ -1,4 +1,4 @@
-module.exports={
+const base = {
   "development": {
     "username": "root",
     "password": "root",
@@ -8,3 +8,5 @@ module.exports={
     "port":8889
   }
 }
+
+  module.exports = base;

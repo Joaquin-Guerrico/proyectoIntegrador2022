@@ -1,4 +1,6 @@
 var data = require('../db/data');
+// var db = require('../db/models');
+
 const controlador = {
     register: (req,res) =>{
         res.render("register")
