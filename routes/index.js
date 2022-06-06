@@ -6,7 +6,7 @@ var db = require('../database/models')
 router.get('/', indexController.index);
 router.get('/search-results', indexController.search);
 router.get('/productos', function(req, res, next) {
-    db.Productos.findAll()
+    db.Product.findAll()
     .then(function (data) {
        res.send(data);
        
