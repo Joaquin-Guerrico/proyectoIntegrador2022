@@ -1,7 +1,7 @@
 
 var data = require('../db/data');
-var base = require ('../database/config/config.js
-')
+var base = require ('../database/config/config.js')
+var route = require ('../routes/index')
 // var db = require('../db/models');
  
 const controlador = {
@@ -12,10 +12,8 @@ const controlador = {
     search : (req, res) => {
         res.render("search-results");
       } ,
-      bebidas: (req, res) => {
-          
-      }    
+       
       
   }
-  console.log(base)
+  
 module.exports = controlador;

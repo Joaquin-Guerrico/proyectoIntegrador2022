@@ -6,13 +6,19 @@ module.exports = function (sequelize, dataTypes){
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-        title:{ type: dataTypes.INTEGER},
-        description:{ type: dataTypes.INTEGER},
-        cover:{ type: dataTypes.INTEGER},
+        
+        user_id:{type: dataTypes.INTEGER},
+        title:{type: dataTypes.STRING},
+        description: {type: dataTypes.STRING},
+        price:{type: dataTypes.INTEGER},
+        cover: {type: dataTypes.INTEGER},
+        created_at:{type: dataTypes.DATE },
+        updated_at:{type: dataTypes.DATE},
+            
     };
     
     const configs = {
-        tableName: 'productos',
+        tableName: 'products',
         timestamps: false
     };
 

@@ -12,6 +12,7 @@ const controlador= {
     products: function (req, res) {
         res.render('products', {data: data}, );
     },
+    
 };
 
 module.exports = controlador;
