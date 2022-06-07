@@ -3,7 +3,7 @@ const base = {
     "username": "root",
     "password": null,
     "database": "idrink_db",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "mysql"
   },
 }
