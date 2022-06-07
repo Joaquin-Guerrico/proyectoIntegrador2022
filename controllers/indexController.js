@@ -1,7 +1,6 @@
 
 var data = require('../db/data');
-var base = require ('../database/config/config.js
-')
+var base = require ('../database/config/config.js')
 // var db = require('../db/models');
  
 const controlador = {
