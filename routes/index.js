@@ -6,29 +6,8 @@ var db = require('../database/models')
 router.get('/', indexController.index);
 router.get('/search-results', indexController.search);
 
-router.get('/valen', function(req, res, next) {
-  db.Productos.findAll()
-  .then( (data) =>{
-    //  res.send(data); 
-     res.render('productstry', {drinks: data});
-  })
-
- .catch( (error)=> {
-   res.send(error);
-   })
- });
-
   //Para traer uno solo por id :
- router.get('/productos/:id', function(req, res, next) {
-  db.Productos.findByPk(req.params.id)
-  .then( (data) =>{
-     res.send(data); 
-  })
-  
- .catch( (error)=> {
-   res.send(error);
-   })
- });
+ router.get('/productos/:id', indexController.detalle);
 
 
 module.exports = router;
