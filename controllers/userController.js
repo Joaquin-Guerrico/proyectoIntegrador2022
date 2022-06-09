@@ -1,8 +1,7 @@
-var data = require('../db/data');
+// var data = require('../db/data');
 // var db = require('../db/models');
 var hasher = require ('bcryptjs');
 const db = require('../database/models');
-const res = require('express/lib/response');
 
 const controlador = {
     register: (req,res) =>{
@@ -23,17 +22,27 @@ const controlador = {
         .catch( (error) =>{
             res.send(error);
         })
+        console.log(req.body);
     },
     
-    profile: (req, res) => {
-        res.render('profile', { user: data});
-    },
     
-    login: (req,res) =>{
-        res.render("login")
-    },
+        profile: function(req, res) {
+            db.User.findByPk(req.session.user.id, { include: [ { association: 'users' } ] })
+                .then(function (user) {
+                    res.render('profile', { user });
+                })
+                .catch((error) => {
+                    res.send(error)
+                });
+        },
+
     edit: (req,res) =>{
         res.render('profile-edit', { user: data.userInfo});
     },
+
+    login: (req,res) =>{
+        res.render("login")
+    },
+    
 };
 module.exports = controlador
