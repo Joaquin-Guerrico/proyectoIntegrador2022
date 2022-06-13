@@ -1,7 +1,7 @@
 const base = {
   "development": {
     "username": "root",
-    "password": null,
+    "password": "guerrico",
     "database": "idrink_db",
     "host": "localhost",
     "dialect": "mysql"
