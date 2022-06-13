@@ -1,4 +1,4 @@
-// var data = require('../db/data');
+var data = require('../db/data');
 // var db = require('../db/models');
 var hasher = require ('bcryptjs');
 const db = require('../database/models');
@@ -13,8 +13,9 @@ const controlador = {
         const hashedpassword = hasher.hashSync(req.body.password, 10);
         db.User.create({
         username: req.body.username,
-        password: req.body.password,
+        password: hashedpassword,
         email: req.body.email,
+        
         })
         .then (() => {
         res.redirect ('/');
@@ -23,17 +24,20 @@ const controlador = {
             res.send(error);
         })
         console.log(req.body);
+       
     },
     
     
-        profile: function(req, res) {
-            db.User.findByPk(req.session.user.id, { include: [ { association: 'users' } ] })
-                .then(function (user) {
-                    res.render('profile', { user });
-                })
-                .catch((error) => {
-                    res.send(error)
-                });
+        profile: (req,res) =>{
+            res.render("profile",{ user: data})
+        // function(req, res) {
+        //     db.User.findByPk(req.session.user.id, { include: [ { association: 'users' } ] })
+        //         .then(function (user) {
+        //             res.render('profile', { user });
+        //         })
+        //         .catch((error) => {
+        //             res.send(error)
+        //         });
         },
 
     edit: (req,res) =>{

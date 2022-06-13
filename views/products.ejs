@@ -3,11 +3,11 @@
 	<!-- Header -->
 <%- include('./partials/header.ejs') %> 
 	<!-- /Header -->
-	
+
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class='h2' class="products-title" >  <%= data.drinks[1].title %></h2 class='h2'> 
+			<h2 class='h2' class="products-title" >  <%= drinks[1].title %></h2 class='h2'> 
 			<p class="product-detail-description">
 				<a href="/products/product-edit">Editar</a>
 			</p>
@@ -19,26 +19,13 @@
 					
 				<ul>
 					<li class="product-detail-description"><br>
-						<img src="<%= data.drinks[1].cover %>">
-					</li>
+					<img src="/images/products/<%=drinks[1].cover %>" alt="<%=drinks[1].cover %>">					</li>
 				</ul>
 					
 				</article>
 
 				<div class="col-12 col-lg-4"  >
-					<section class="comments">
-						<% for (let i = 0; i < data.coments.length; i++) { %>
-						<article class="txt">
-							<img src=" <%= data.coments[i].picture %>" alt="">
-							<div class="data">
-								<p class="user">
-								<strong> <a href="profile">  <%= data.coments[i].username %></a> </strong>
-								<%= data.coments[i].coment %></p>
-							</div>
-						</article>
-					<% } %> 
-
-					</section>
+					
 					<form action="/products" method="get" class="form" action="" method="POST">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
