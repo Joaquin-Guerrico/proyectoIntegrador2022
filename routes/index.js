@@ -5,9 +5,7 @@ var db = require('../database/models')
 /* GET home page. */
 router.get('/', indexController.index);
 router.get('/search-results', indexController.search);
-
-  //Para traer uno solo por id :
-//  router.get('/products/:id', indexController.detalle);
+router.get('/productos',indexController.productos);
 
 
 module.exports = router;

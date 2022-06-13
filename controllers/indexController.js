@@ -21,6 +21,16 @@ const controlador = {
     search : (req, res) => {
         res.render("search-results");
       } ,
+      productos: (req,res)=>{
+        db.Productos.findAll()
+        .then( (data) =>{
+           res.render('productos', {drinks: data});
+        })
+      
+       .catch( (error)=> {
+         res.send(error);
+         })
+    }
        
       
   }
