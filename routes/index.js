@@ -3,10 +3,10 @@ var router = express.Router();
 const indexController = require("../controllers/indexController")
 var db = require('../database/models')
 /* GET home page. */
-router.get('/', indexController.index);
+//router.get('/', indexController.index);
 router.get('/search-results', indexController.search);
 
-router.get('/valen', function(req, res, next) {
+router.get('/', function(req, res, next) {
   db.Productos.findAll()
   .then( (data) =>{
     //  res.send(data); 
