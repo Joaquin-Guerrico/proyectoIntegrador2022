@@ -7,7 +7,7 @@ router.get('/', indexController.index);
 router.get('/search-results', indexController.search);
 
   //Para traer uno solo por id :
- router.get('/productos/:id', indexController.detalle);
+ router.get('/products/:id', indexController.detalle);
 
 
 module.exports = router;
