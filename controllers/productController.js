@@ -24,11 +24,16 @@ const controlador= {
          })
        },
 
-    detail: function (req, res) {
+    detail:function(req, res, next) {
+        db.Productos.findByPk(req.params.id)
+        .then( (data) =>{
+            res.render('products', {drinks: data});
+        })
         
-        res.send(req.params.id)
-
-    }
+       .catch( (error)=> {
+         res.send(error);
+         })
+       },
     
 };
 
