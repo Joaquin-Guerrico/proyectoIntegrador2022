@@ -9,9 +9,7 @@ const controlador= {
     add : (req,res)=>{
         res.render("product-add")
     },
-    // products: function (req, res) {
-    //     res.render('products', {data: data}, );
-    // },
+    
     products: function(req, res, next) {
         console.log(req.params);
         db.Productos.findAll()
