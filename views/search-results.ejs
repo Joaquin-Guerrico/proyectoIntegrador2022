@@ -10,7 +10,39 @@
 				<h2 class='h2' class="products-title">Resultados de búsqueda</h2 class='h2'>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<p class="resultado-busqueda"> No tenemos ese producto en estos instantes, vuelva a intentarlo más tarde.</p>
+			<!-- <p class="resultado-busqueda"> No tenemos ese producto en estos instantes, vuelva a intentarlo más tarde.</p> -->
+			<!-- product detail -->
+	<div class="container products-wrapper">
+		<div class="d-flex align-items-center">
+			<h2 class='h2' class="products-title" >  <%= drinks.title? %></h2 class='h2'> 
+			<p class="product-detail-description">
+				<a href="/products/product-edit">Editar</a>
+			</p>
+		</div>
+		<div class="product-detail">
+			<div class="row">
+
+				<article class="col-12 col-lg-8 product-detail-info">
+					
+				<ul>
+					<li class="product-detail-description"><br>
+					<img src="/images/products/<%=drinks.cover %>" alt="<%=drinks.cover %>">					</li>
+				</ul>
+					
+				</article>
+
+				<div class="col-12 col-lg-4"  >
+					
+					<form action="/products" method="get" class="form" action="" method="POST">
+						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+					</form>
+					<hr>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /product detail -->
 		</div>
 	</div>
 	<!-- footer -->

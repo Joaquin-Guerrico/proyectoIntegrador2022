@@ -25,6 +25,8 @@ app.use('/', indexRouter);
 app.use('/products', productsRouter);
 app.use('/profile', usersRouter);
 
+
+
 app.use(session({
   secret: "nuestro mensaje secreto",
   resave: false,
