@@ -48,5 +48,26 @@ const controlador = {
         res.render("login")
     },
     
+     access: function(req, res, next) {
+        db.User.findOne({ where: { username: req.body.username }})
+            .then(function(user) {
+                        if (user.password == req.body.password) {
+          res.redirect('/')
+        } else {
+          throw Error('Su usuario y/o contraseña son incorrectos')
+        }
+            })
+            .catch(function (err) {
+                next(err)
+            })
+    },
 };
 module.exports = controlador
+// access: function(req,res){
+//         const user= db.User.findOne({where: {username: req.body.username}})
+//         if (user.password == req.body.password) {
+//           res.redirect('/')
+//         } else {
+//           throw Error('Su usuario y/o contraseña son incorrectos')
+//         }
+//       },

@@ -33,8 +33,7 @@ const controlador = {
      .catch( (error)=> {
        res.send(error);
        })
-  },
-
+      },
        
       
   }

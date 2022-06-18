@@ -1,4 +1,3 @@
-// var data = require('../db/data');
 var db = require('../database/models')
 
 const controlador= {
@@ -9,7 +8,18 @@ const controlador= {
     add : (req,res)=>{
         res.render("product-add")
     },
-    
+
+    store: (req, res)=>{
+        db.Productos.create (req.body)
+        .then (() =>{
+            res.redirect('/')
+        })
+        .catch ((err)=>{
+        res.send(err);
+        })   
+    },
+
+
     products: function(req, res, next) {
         console.log(req.params);
         db.Productos.findAll()
@@ -22,6 +32,7 @@ const controlador= {
          })
        },
 
+    
     detail:function(req, res, next) {
         db.Productos.findByPk(req.params.id)
         .then( (data) =>{
