@@ -7,13 +7,21 @@ const upload = multer({ dest: 'public/images/uploads' });
 
 
 /* GET home page. */
-router.get('/product-edit', productController.edit);
+router.get('/', productController.products);
+
+router.get('/:id/product-edit', productController.edit);
+router.post('/:id/product-edit', productController.update);
+
 router.get('/product-add', productController.add);
 router.post('/product-add', productController.store);
 router.post('/product-add', upload.single('cover'), productController.store);
 
-router.get('/', productController.products);
+
+
+
 router.get('/:id',productController.detail);
+
+router.post('/:id/delete', productController.delete);
 
 
 module.exports = router;

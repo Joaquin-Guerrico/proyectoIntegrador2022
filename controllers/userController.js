@@ -48,14 +48,19 @@ const controlador = {
         res.render("login")
     },
     
-     access: function(req, res, next) {
+    access: function(req, res, next) {
         db.User.findOne({ where: { username: req.body.username }})
             .then(function(user) {
-                        if (user.password == req.body.password) {
-          res.redirect('/')
-        } else {
-          throw Error('Su usuario y/o contraseña son incorrectos')
-        }
+                if (!user) throw Error('User not found.')
+                if (hasher.compareSync(req.body.password, user.password)) {
+                    req.session.user = user;
+                    if (req.body.rememberme) {
+                        res.cookie('userId', user.id, { maxAge: 1000 * 60 * 60 * 7 })
+                    }
+                    res.redirect('/');
+                } else {
+                    throw Error('Su usuario y/o contraseña son incorrectos')
+                }
             })
             .catch(function (err) {
                 next(err)

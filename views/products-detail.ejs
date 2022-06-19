@@ -34,8 +34,20 @@
 				</div>
 			</div>
 		</div>
+		<!-- /product detail -->
+
+			<!-- Edit button -->
+		<a href="/products/<%= drinks.id %>/product-edit " >Edit</a>
+		<br><br>
+
+			<!-- Delete form  -->
+		<form class="form" method='post' action="/products/<%= drinks.id  %>/delete ">
+			<div class="button-panel">
+			<input  class="button" type="submit" value="borrar">
+			</div>
+		</form>
 	</div>
-	<!-- /product detail -->
+
 
 	<!-- /footer -->
 <%- include('./partials/footer.ejs') %> 
