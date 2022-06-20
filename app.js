@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 
-var session = require('express-session');
+const session = require('express-session');
 var app = express();
 
 // view engine setup
@@ -26,13 +26,28 @@ app.use('/products', productsRouter);
 app.use('/profile', usersRouter);
 
 
-
+//Session----------------------------------------------------------------
 app.use(session({
   secret: "nuestro mensaje secreto",
   resave: false,
   saveUninitialized: true,
 }));
 
+app.use(function(err, req, res, next) {
+  res.locals.usuarioLogueado = {
+    nombreDeUsuario: "Valen Toro"
+  }
+  return next();
+});
+
+app.use(function(err, req, res, next) {
+  if (req.session.usuarioLogueado != undefined) {
+      res.locals.user = req.session.usuarioLogueado
+  }
+  return next();
+});
+
+//----------------------------------------------------------------------
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
