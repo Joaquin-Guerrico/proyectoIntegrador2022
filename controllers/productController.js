@@ -1,15 +1,43 @@
-// var data = require('../db/data');
 var db = require('../database/models')
 
 const controlador= {
 
     edit : (req,res)=>{
-        res.render("product-edit")
+        db.Productos.findByPk(req.params.id)
+        .then((drinks)=>{
+            res.render("product-edit", {drinks});
+        })
+        .catch((err)=>{
+            res.send(err);
+        }) 
     },
+
+    update: function(req,res){
+        db.Productos.update(req.body, {where: { id: req.params.id }})
+        .then((drink) => {
+            res.redirect('/');
+        })
+        .catch((err)=>{
+            res.send(err);
+        })
+    },
+
     add : (req,res)=>{
         res.render("product-add")
     },
-    
+
+    store: (req, res)=>{
+        if (req.file) req.body.cover = (req.file.path).replace("public", "");
+        db.Productos.create (req.body)
+        .then (() =>{
+            res.redirect('/')
+        })
+        .catch ((error)=>{
+        res.send(error);
+        })   
+    },
+
+
     products: function(req, res, next) {
         console.log(req.params);
         db.Productos.findAll()
@@ -22,6 +50,7 @@ const controlador= {
          })
        },
 
+    
     detail:function(req, res, next) {
         db.Productos.findByPk(req.params.id)
         .then( (data) =>{
@@ -32,6 +61,17 @@ const controlador= {
          res.send(error);
          })
        },
+
+    delete: function(req,res){
+        db.Productos.destroy({where: {id: req.params.id}})
+        .then(()=>{
+            res.redirect('/');
+        })
+        .catch((err)=>{
+            res.send(err);
+        })
+    },
+    
 
        
     
