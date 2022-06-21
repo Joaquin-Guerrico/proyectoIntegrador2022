@@ -47,13 +47,16 @@ const controlador = {
     login: (req,res) =>{
         res.render("login")
     },
-    
+
+    // hello: function(req,res){
+    //     res.send('hola'+req.session.user.username)
+    // },
     access: function(req, res, next) {
         db.User.findOne({ where: { username: req.body.username }})
             .then(function(user) {
                 if (!user) throw Error('User not found.')
                 if (hasher.compareSync(req.body.password, user.password)) {
-                    req.session.user = user;
+                    req.session.user = user ;
                     if (req.body.rememberme) {
                         res.cookie('userId', user.id, { maxAge: 1000 * 60 * 60 * 7 })
                     }
@@ -66,6 +69,11 @@ const controlador = {
                 next(err)
             })
     },
+    logout:function (req,res,next) {
+        req.session.user = null;
+        res.clearCookie('userId');
+        res.redirect('/')
+    }
 };
 module.exports = controlador
 // access: function(req,res){

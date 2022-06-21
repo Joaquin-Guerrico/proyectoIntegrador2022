@@ -41,11 +41,13 @@
 		<br><br>
 
 			<!-- Delete form  -->
-		<form class="form" method='post' action="/products/<%= drinks.id  %>/delete ">
-			<div class="button-panel">
-			<input  class="button" type="submit" value="borrar">
-			</div>
-		</form>
+			 	<!-- Que aparezca el boton de borrar solamente i se cumplen dos condiciones: usuario logueado  y quiero que ese usuario sea igual al que creo el libro-->
+			<form class="form" method='post' action="/products/<%= drinks.id  %>/delete "> 
+				<div class="button-panel">
+				<input  class="button" type="submit" value="borrar">
+				</div>
+		    </form>
+			
 	</div>
 
 

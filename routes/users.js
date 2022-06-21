@@ -5,9 +5,11 @@ const userController = require("../controllers/userController")
 router.get('/', userController.profile);
 router.get('/profile', userController.profile);
 
-
+// router.get('/hello', userController.hello)
 router.get('/login', userController.login );
 router.post('/login', userController.access);
+router.get('/logout', userController.logout );
+
 
 router.get('/profile-edit', userController.edit);
 router.get('/register', userController.register);

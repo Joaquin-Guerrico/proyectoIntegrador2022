@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
+var db = require('./database/models');
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -17,6 +19,10 @@ app.use(session({
   saveUninitialized: true,
 }));
 
+
+
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -27,11 +33,49 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// COOKIE MIDDLEWARES
+
+app.use(function(req,res,next){
+  res.locals.user =req.session.user;
+  next();
+})
+
+app.use((req,res,next)=>{
+  if (!req.session.user) {
+     db.User.findByPk(req.cookies.userId)
+     .then(function(user){
+      req.session.user = user;
+      next();
+     })
+    } else{
+  next();
+
+
+    }
+})
+
 app.use('/', indexRouter);
 app.use('/products', productsRouter);
 app.use('/profile', usersRouter);
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// app.use((req,res,next)=>{
+//   res.locals.user = req.session.user;
+//   next();
+// });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

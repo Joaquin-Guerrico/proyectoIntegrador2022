@@ -27,6 +27,7 @@ const controlador= {
     },
 
     store: (req, res)=>{
+        req.body.user_id = reeq.session.user.id;  //indica a la base de datos que el producto le pertenece a ese user
         db.Productos.create (req.body)
         .then (() =>{
             res.redirect('/')
