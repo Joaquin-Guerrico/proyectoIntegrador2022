@@ -12,16 +12,16 @@
 		
 			<div class="form-wrapper">
 				<h1 class="formulario1">Editar</h1>
-				<form class="form" method="post" action="/products/product-add" enctype="multipart/form-data" >
+				<form class="form" method="post" enctype="multipart/form-data" >
 					<div class="form-item">
 						
-						<input type="text" name="title" required="required" placeholder="<%= drinks.title %>"></input>
-						<input type="text" name="description" placeholder="<%= drinks.description %>"> <br>
-						<input type="number" name="price" placeholder="<%= drinks.price %>"> <br>
-						<input type="date" name="created_at" id="created_at" placeholder="<%= drinks.created_at %>">
+						<input type="text" name="title" required="required" value="<%= drinks.title %>"></input>
+						<input type="text" name="description" value="<%= drinks.description %>"> <br>
+						<input type="number" name="price" value="<%= drinks.price %>"> <br>
+						<input type="date" name="created_at" id="created_at" value="<%= drinks.created_at %>">
 					</div>
 					<div class="button-panel">
-					<input type="submit" class="button" title="Add product " value="Editar"></input>
+					<input type="submit" class="button" title="Edit product " value="Editar"></input>
 				  </div>
 		
 				</form>

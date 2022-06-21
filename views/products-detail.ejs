@@ -9,7 +9,7 @@
 		<div class="d-flex align-items-center">
 			<h2 class='h2' class="products-title" >  <%= drinks.title %></h2 class='h2'> 
 			<p class="product-detail-description">
-				<a href="/products/product-edit">Editar</a>
+				<a href="/products/product-edit/<%= drinks.id %> ">Editar</a>
 			</p>
 		</div>
 		<div class="product-detail">
@@ -36,8 +36,6 @@
 		</div>
 		<!-- /product detail -->
 
-			<!-- Edit button -->
-		<a href="/products/<%= drinks.id %>/product-edit " >Edit</a>
 		<br><br>
 
 			<!-- Delete form  -->

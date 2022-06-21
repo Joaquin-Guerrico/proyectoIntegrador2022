@@ -7,18 +7,19 @@ const controlador= {
         .then((drinks)=>{
             res.render("product-edit", {drinks});
         })
-        .catch((err)=>{
-            res.send(err);
+        .catch((error)=>{
+            res.send(error);
         }) 
     },
 
     update: function(req,res){
+        if (req.file) req.body.cover = (req.file.path).replace('public', '');
         db.Productos.update(req.body, {where: { id: req.params.id }})
-        .then((drink) => {
+        .then((drinks) => {
             res.redirect('/');
         })
-        .catch((err)=>{
-            res.send(err);
+        .catch((error)=>{
+            res.send(error);
         })
     },
 
