@@ -44,8 +44,8 @@ const controlador = {
         res.render('profile-edit', { user: data.userInfo});
     },
 
-    login: (req,res) =>{
-        res.render("login")
+    login: function(req, res) {
+        res.render('login', { title: 'Login'});
     },
 
     // hello: function(req,res){
