@@ -22,20 +22,18 @@ const controlador = {
         .catch( (error) =>{
             res.send(error);
         })
-        console.log(req.body);
        
     },
     
-    profile: (req,res) =>{
-            res.render('profile')
-        // function(req, res) {
-        //     db.User.findByPk(req.session.user.id, { include: [ { association: 'users' } ] })
-        //         .then(function (user) {
-        //             res.render('profile', { user });
-        //         })
-        //         .catch((error) => {
-        //             res.send(error)
-        //         });
+    profile:
+        function(req, res) {
+            db.User.findByPk(req.session.user.id, { include: [ { association: 'products' } ] })
+                .then(function (user) {
+                    res.render('profile', { user });
+                })
+                .catch((error) => {
+                    res.send(error)
+                });
         },
 
     edit: (req,res) =>{
