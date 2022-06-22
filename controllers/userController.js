@@ -1,7 +1,6 @@
-var data = require('../db/data');
-// var db = require('../db/models');
+// var data = require('../db/data');
 var hasher = require ('bcryptjs');
-const db = require('../database/models');
+var db = require('../database/models')
 
 const controlador = {
     register: (req,res) =>{
@@ -27,9 +26,8 @@ const controlador = {
        
     },
     
-    
-        profile: (req,res) =>{
-            res.render("profile",{ user: data})
+    profile: (req,res) =>{
+            res.render('profile')
         // function(req, res) {
         //     db.User.findByPk(req.session.user.id, { include: [ { association: 'users' } ] })
         //         .then(function (user) {
@@ -41,16 +39,37 @@ const controlador = {
         },
 
     edit: (req,res) =>{
-        res.render('profile-edit', { user: data.userInfo});
+        res.render('profile-edit');
+    },
+
+    edit : (req,res)=>{
+        db.User.findByPk(req.params.id)
+        .then((drinks)=>{
+            res.render("profile-edit", {drinks});
+        })
+        .catch((error)=>{
+            res.send(error);
+        }) 
+    },
+
+    update: function(req,res){
+        if (req.file) req.body.img = (req.file.path).replace('public', '');
+        db.User.update(req.body, {where: { id: req.params.id }})
+        .then((drinks) => {
+            if(req.body.username){
+                req.session.user.username = req.body.username
+            }
+            res.redirect('/');
+        })
+        .catch((error)=>{
+            res.send(error);
+        })
     },
 
     login: function(req, res) {
         res.render('login', { title: 'Login'});
     },
 
-    // hello: function(req,res){
-    //     res.send('hola'+req.session.user.username)
-    // },
     access: function(req, res, next) {
         db.User.findOne({ where: { username: req.body.username }})
             .then(function(user) {
@@ -76,11 +95,3 @@ const controlador = {
     }
 };
 module.exports = controlador
-// access: function(req,res){
-//         const user= db.User.findOne({where: {username: req.body.username}})
-//         if (user.password == req.body.password) {
-//           res.redirect('/')
-//         } else {
-//           throw Error('Su usuario y/o contraseña son incorrectos')
-//         }
-//       },

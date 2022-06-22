@@ -3,16 +3,17 @@
 	<%- include('./partials/header.ejs') %> 
 	<!-- /Header -->
 
-	<!-- Novedades -->
+	<!-- Register form -->
 	<div class="form-wrapper">
 		<h1 class="formulario1">Registrate</h1>
 		<form class="form" method="post" action="/profile/register" >
 		    <div class="form-item">
 				<!-- <input type="file" name="dni"> -->
-				<input type="email" name="email" required="required" placeholder="Email Address"></input>
-				<input type="text" name="username" placeholder="Nombre de usuario"> <br>
-				<input type="password" name="password" placeholder="Contraseña"> <br>
-				<input type="date" name="date" placeholder="Fecha de nacimiento"> <br>
+				<input type="email" name="email" placeholder="Correo electronico"> <br>
+					<input type="text" name="username" placeholder="Nombre de usuario"> <br>
+					<input type="password" name="password" placeholder="Contraseña"> <br>
+					<input type="date" name="date" placeholder="Fecha de nacimiento"> <br>
+					<input type="file" name="img" placeholder="Foto de Perfil"> <br>
 						
 		    </div>
 		    <div class="button-panel">

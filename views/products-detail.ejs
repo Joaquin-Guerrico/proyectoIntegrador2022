@@ -6,12 +6,18 @@
 
 	<!-- product detail -->
 	<div class="container products-wrapper">
+		
+		 
 		<div class="d-flex align-items-center">
 			<h2 class='h2' class="products-title" >  <%= drinks.title %></h2 class='h2'> 
+				<!-- boton de editar -->
+				<% if (locals.user) { %>
 			<p class="product-detail-description">
 				<a href="/products/product-edit/<%= drinks.id %> ">Editar</a>
 			</p>
+			<% } %> 
 		</div>
+		
 		<div class="product-detail">
 			<div class="row">
 
@@ -39,13 +45,14 @@
 		<br><br>
 
 			<!-- Delete form  -->
-			 	<!-- Que aparezca el boton de borrar solamente i se cumplen dos condiciones: usuario logueado  y quiero que ese usuario sea igual al que creo el libro-->
-			<form class="form" method='post' action="/products/<%= drinks.id  %>/delete "> 
+			 	<!-- Que aparezca el boton de borrar solamente i se cumplen dos condiciones: usuario logueado  y quiero que ese usuario sea igual al que creo el producto-->
+				 <% if (locals.user && user.id ==  drinks.user_id) { %> 
+				 <form class="form" method='post' action="/products/<%= drinks.id  %>/delete "> 
 				<div class="button-panel">
 				<input  class="button" type="submit" value="borrar">
 				</div>
 		    </form>
-			
+			<% } %> 
 	</div>
 
 

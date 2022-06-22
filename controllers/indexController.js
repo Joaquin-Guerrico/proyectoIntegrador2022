@@ -1,11 +1,10 @@
 
 var db = require('../database/models')
 const { Op } = require("sequelize");
-// var db = require('../db/models');
- 
+
 const controlador = {
 
-    index: function(req, res,) {
+   index: function(req, res,) {
         db.Productos.findAll()
         .then( (data) =>{
            res.render('index', {drinks: data});

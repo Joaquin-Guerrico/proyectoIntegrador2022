@@ -1,29 +1,36 @@
+<!-- Header -->
+<%- include('./partials/header.ejs') %> 
+<!-- /Header -->
 
-
-	<!-- Header -->
-    <%- include('./partials/header.ejs') %> 
-	<!-- /Header -->
-
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class='h2' class="products-title">Editar mi perfil</h2 class='h2'>
-			</div>
-			<div class="col-12">
-				<form action="get">
-					<input type="email" name="email" placeholder="Correo electronico">
-					<input type="text" name="username" placeholder="Nombre de usuario">
-					<input type="password" name="password" placeholder="Contraseña">
-					<input type="date" name="date" placeholder="Fecha de nacimiento">
-					<input type="number" name="dni" placeholder="Documento de indentidad">
-					<input type="file" name="img" placeholder="Foto de Perfil">
-					
-				</form>
-				<a href="/profile" class="main-header_home-link"><button >Editar</button></a>
-			</div>
+<!-- Novedades -->
+<div class="container products-wrapper">
+	<div class="row">
+		<div class="col-12">
+			<h2 class='h2' class="products-title">Editar perfil</h2 class='h2'>
 		</div>
+		     <!-- Formulario para editar-->
+		
+			<div class="form-wrapper">
+				<h1 class="formulario1">Editar</h1>
+				<form class="form" method="post" enctype="multipart/form-data" >
+					<div class="form-item">
+						
+						<input type="email" name="email" value="<%= user.email %>">
+					<input type="text" name="username" value="<%= user.username %>">
+					<input type="date" name="birthday" value="<%= user.birthday %>">
+					<input type="file" name="img" value="<%= user.img %>">
+					<div class="button-panel">
+					<input type="submit" class="button" title="Edit product " value="Editar"></input>
+				  </div>
+		
+				</form>
+			</div>
+		
+
 	</div>
-	<!-- footer -->
-	<%- include('./partials/footer.ejs')%>
-	<!-- /footer -->
+</div>
+</div>
+<!-- footer -->
+<%- include('./partials/footer.ejs')%>
+<!-- /footer -->
+

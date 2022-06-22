@@ -22,7 +22,7 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.DATE,
         },
         img: {
-            type: dataTypes.STRING,
+            type: dataTypes.INTEGER,
         },
         created_at:{
             type: dataTypes.DATE,
@@ -40,16 +40,16 @@ module.exports = function(sequelize, dataTypes){
 
    const User = sequelize.define(alias, cols, config);
    
-//    User.associate = function(models) {
-//        User.hasMany(models.Product, {
-//         as: 'products',
-//         foreignKey: 'user_id',
-//        });
-//        User.hasMany(models.Comment, {
-//            as:'comments',
-//            foreignKey: 'user_id',
-//        })
-//    }
+   User.associate = function(models) {
+       User.hasMany(models.Productos, {
+        as: 'products',
+        foreignKey: 'user_id',
+       });
+       User.hasMany(models.Comment, {
+           as:'comments',
+           foreignKey: 'user_id',
+       })
+   }
 
    return User;
 }
