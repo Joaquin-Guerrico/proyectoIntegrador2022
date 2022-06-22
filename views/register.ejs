@@ -6,7 +6,12 @@
 	<!-- Register form -->
 	<div class="form-wrapper">
 		<h1 class="formulario1">Registrate</h1>
-		<form class="form" method="post" action="/profile/register" >
+		<% if(locals.error){ %> 
+			<div class="alert alert-danger" role="alert">
+				<%= error %> 
+			</div>
+			<% } %> 
+		<form class="form" method="post" action="/profile/register" enctype="multipart/form-data" >
 		    <div class="form-item">
 				<!-- <input type="file" name="dni"> -->
 				<input type="email" name="email" placeholder="Correo electronico"> <br>

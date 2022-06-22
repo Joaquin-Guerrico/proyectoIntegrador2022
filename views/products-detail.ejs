@@ -10,8 +10,9 @@
 		 
 		<div class="d-flex align-items-center">
 			<h2 class='h2' class="products-title" >  <%= drinks.title %></h2 class='h2'> 
+				<div><h3   >Hecho por: <a href="/profile/detail/<%= drinks.owner.id %>"> <%= drinks.owner.username %></a></h3 > </div>
 				<!-- boton de editar -->
-				<% if (locals.user) { %>
+				<% if (locals.user && user.id ==  drinks.user_id) { %>
 			<p class="product-detail-description">
 				<a href="/products/product-edit/<%= drinks.id %> ">Editar</a>
 			</p>
@@ -25,17 +26,33 @@
 					
 				<ul>
 					<li class="product-detail-description"><br>
-					<img src="<%=drinks.cover %>" alt="<%=drinks.cover %>">					</li>
+					<img src="/images/uploads/<%=drinks.cover %>" alt="<%=drinks.cover %>">					</li>
 				</ul>
 					
 				</article>
 
 				<div class="col-12 col-lg-4"  >
+					<section class="comments">
+						<% drinks.comments.forEach(comment => { %>
+						<article>
+							<img src="<%=comment.author.img %>" alt="">
+							<div class="data">
+								<p class="user">
+									<strong><a href="/profile/detail/<%=comment.author.id %>"><%=comment.author.username %></a></strong>
+									<%=comment.comment %>
+								</p>
+							</div>
+						</article>
+						<% }) %>
+					</section>
+					<% if (locals.user) { %>
 					
-					<form action="/products" method="get" class="form" action="" method="POST">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+					<form action="/products/<%= drinks.id  %>/comment" class="form"  method="POST">
+						<input class="form-input" name="comentario" type="text"  placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 					</form>
+					<% } %> 
+
 					<hr>
 				</div>
 			</div>

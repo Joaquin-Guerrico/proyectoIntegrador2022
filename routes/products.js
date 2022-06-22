@@ -22,6 +22,7 @@ router.post('/product-add', upload.single('cover'), productController.store);
 router.get('/:id',productController.detail);
 
 router.post('/:id/delete', productController.delete);
+router.post('/:id/comment', productController.comment);
 
 
 module.exports = router;

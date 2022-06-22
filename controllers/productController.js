@@ -39,6 +39,24 @@ const controlador= {
         })   
     },
 
+    comment: (req, res)=>{
+        let productId = req.params.id
+        let comentario ={
+            product_id: productId,
+            user_id:req.session.user.id,
+            comment: req.body.comentario,
+            created_at: Date.now()
+        }
+
+        db.Comment.create(comentario)
+        .then (() =>{
+            res.redirect('/products/'+productId)
+        })
+        .catch ((error)=>{
+        res.send(error);
+        })   
+    },
+
 
     products: function(req, res, next) {
         console.log(req.params);
@@ -54,7 +72,15 @@ const controlador= {
 
     
     detail:function(req, res, next) {
-        db.Productos.findByPk(req.params.id)
+        db.Productos.findByPk(req.params.id,{
+            include:[{
+                association:'comments',
+                include:{association:'author'}
+            },
+        {
+            association : 'owner'
+        }]
+        })
         .then( (data) =>{
             res.render('products-detail', {drinks: data});
         })

@@ -8,14 +8,16 @@
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
 			<div class="img-container offset-3 col-2">
-				<img src="<%= user.img  %> " alt="foto de perfil" class="foto-perfil">
+				<img src="<%= usuario.img %>" alt="foto de perfil" class="foto-perfil">
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<h2 class="main-title"><%= user.username %>
-						<a href="/profile/profile-edit/<%= user.id %>">
+					<h2 class="main-title"><%= usuario.username %>
+						<% if (locals.user && user.id ==  usuario.id) { %>
+						<a href="/profile/profile-edit/<%= usuario.id %>">
 							<i class="fas fa-cog"></i>
 						</a>
+						<% } %> 
 					</h2>
 					<a class="btn mt-3 ml-4" href="">SEGUIR</a>
 				</div>
@@ -23,9 +25,9 @@
 					<ul class="">
 						<li></li>
 						<br>
-						<li>8 productos</li>
+						<li> <%= usuario.products.length %> productos</li>
 						<li>200 mill. seguidores</li>
-						<li>300 comentarios</li>
+						<li> <%= usuario.comments.length %> comentarios</li>
 					</ul>
 				</div>
 			</div>
@@ -37,12 +39,30 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class='h2' class="products-title">Mis productos</h2 class='h2'>
+				<h2 class='h2' class="products-title">Mis productos <%= usuario.products.length %> </h2 class='h2'>
 			</div>
 
 
 			
-			
+			<% for (let i= 0; i <  usuario.products.length ; i++) { %>
+				<div class="col-12 col-sm-6 col-lg-3"> 
+					<section class="product-box">
+						<a href="/products/<%= usuario.products[i].id %> ">
+							
+							<figure class="product-box_image">
+								<h3><%=  usuario.products[i].title %> </h3>
+								<img src="/images/uploads/<%=  usuario.products[i].cover %>" alt="">
+							</figure>
+							<article class="product-box_data">
+								<h2 class='h2'></h2 class='h2'>
+								<p></p>
+								<p>Comentarios: 12</p>
+							</article>
+	
+						</a>
+					</section>
+				</div>
+			<% } %>
 		</div>
 	</div>
 	<!-- footer -->
