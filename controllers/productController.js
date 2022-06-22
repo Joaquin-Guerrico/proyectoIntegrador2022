@@ -3,6 +3,10 @@ var db = require('../database/models')
 const controlador= {
 
     edit : (req,res)=>{
+        console.log(req.session.user);
+        if (!req.session.user ){
+            throw Error('No esta autorizado para navegar en esta sección, porfavor inicie sesion o cree una nueva.')
+        }
         db.Productos.findByPk(req.params.id)
         .then((drinks)=>{
             res.render("product-edit", {drinks});
@@ -24,6 +28,9 @@ const controlador= {
     },
 
     add : (req,res)=>{
+        if (!req.session.user){
+            throw Error('No esta autorizado para navegar en esta sección, porfavor inicie sesion o cree una nueva.')
+        }
         res.render("product-add")
     },
 
@@ -40,6 +47,11 @@ const controlador= {
     },
 
     comment: (req, res)=>{
+        
+            db.Comment.findAll({ include:{all: true, nested: true},
+              order: [ ['created_at', 'DESC']]
+          })
+     
         let productId = req.params.id
         let comentario ={
             product_id: productId,
@@ -59,8 +71,10 @@ const controlador= {
 
 
     products: function(req, res, next) {
-        console.log(req.params);
-        db.Productos.findAll()
+        db.Productos.findAll(
+            { include:{all: true, nested: true},
+            order: [ ['created_at', 'DESC']]
+        })
         .then( (data) =>{
            res.render('products', {drinks: data});
         })
@@ -72,15 +86,7 @@ const controlador= {
 
     
     detail:function(req, res, next) {
-        db.Productos.findByPk(req.params.id,{
-            include:[{
-                association:'comments',
-                include:{association:'author'}
-            },
-        {
-            association : 'owner'
-        }]
-        })
+        db.Productos.findByPk(req.params.id,{ include:{all: true, nested: true}})
         .then( (data) =>{
             res.render('products-detail', {drinks: data});
         })

@@ -1,4 +1,3 @@
-// var data = require('../db/data');
 var hasher = require ('bcryptjs');
 const { DATE } = require('sequelize');
 var db = require('../database/models')
@@ -49,10 +48,7 @@ const controlador = {
     
     profile:
         function(req, res) {
-            db.User.findByPk(req.params.id, { include: [ { association: 'products' },
-        {
-            association:'comments'
-        } ] })
+            db.User.findByPk(req.params.id, { include:{all: true, nested: true}})
                 .then(function (usuario) {
                    // res.send(usuario)
                     res.render('profile', { usuario });

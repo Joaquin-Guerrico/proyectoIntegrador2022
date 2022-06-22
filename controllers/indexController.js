@@ -5,7 +5,9 @@ const { Op } = require("sequelize");
 const controlador = {
 
    index: function(req, res,) {
-        db.Productos.findAll()
+        db.Productos.findAll({ include:{all: true, nested: true},
+          order: [ ['created_at', 'DESC']]
+      })
         .then( (data) =>{
            res.render('index', {drinks: data});
         })
@@ -20,9 +22,10 @@ const controlador = {
       console.log('buscaste:'+ req.query.search);
 
       db.Productos.findAll({
-        where: [
-          { title: { [Op.like]: '%' + req.query.search + '%' } }
-        ]
+        where:{[Op.or]: [
+          { title: { [Op.like]: '%' + req.query.search + '%' } },
+          { description: { [Op.like]: '%' + req.query.search + '%' }}  
+        ]}
         
       })
       .then( (data) =>{
