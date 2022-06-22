@@ -64,3 +64,6 @@ UPDATE `idrink_db`.`products` SET `user_id` = '5' WHERE (`id` = '1') ;
 UPDATE `idrink_db`.`products` SET `user_id` = '5' WHERE (`id` = '2') ;
 UPDATE `idrink_db`.`products` SET `user_id` = '5' WHERE (`id` = '3') ;
 
+
+
+
