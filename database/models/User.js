@@ -1,4 +1,4 @@
-module.exports = function(sequelize, dataTypes){
+module.exports = (sequelize, dataTypes) => {
 
     let alias = 'User'; 
 
@@ -40,7 +40,7 @@ module.exports = function(sequelize, dataTypes){
 
    const User = sequelize.define(alias, cols, config);
    
-   User.associate = function(models) {
+   User.associate = (models) => {
        User.hasMany(models.Productos, {
         as: 'products',
         foreignKey: 'user_id',

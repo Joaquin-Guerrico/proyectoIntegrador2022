@@ -8,7 +8,7 @@ const controlador= {
             throw Error('No esta autorizado para navegar en esta sección, porfavor inicie sesion o cree una nueva.')
         }
         db.Productos.findByPk(req.params.id)
-        .then((drinks)=>{
+        .then((drinks) => {
             res.render("product-edit", {drinks});
         })
         .catch((error)=>{
@@ -16,7 +16,7 @@ const controlador= {
         }) 
     },
 
-    update: function(req,res){
+    update: (req,res) => {
         if (req.file) req.body.cover = (req.file.path).replace('public', '');
         db.Productos.update(req.body, {where: { id: req.params.id }})
         .then((drinks) => {
@@ -48,10 +48,6 @@ const controlador= {
 
     comment: (req, res)=>{
         
-            db.Comment.findAll({ include:{all: true, nested: true},
-              order: [ ['created_at', 'DESC']]
-          })
-     
         let productId = req.params.id
         let comentario ={
             product_id: productId,
@@ -70,8 +66,8 @@ const controlador= {
     },
 
 
-    products: function(req, res, next) {
-        db.Productos.findAll(
+    products:async (req, res, next) => {
+         db.Productos.findAll(
             { include:{all: true, nested: true},
             order: [ ['created_at', 'DESC']]
         })
@@ -85,8 +81,17 @@ const controlador= {
        },
 
     
-    detail:function(req, res, next) {
-        db.Productos.findByPk(req.params.id,{ include:{all: true, nested: true}})
+    detail:(req, res, next) =>{
+
+        let relations = {
+            order: [['comments','created_at', 'DESC']],
+            include: {
+                all: true,
+                nested: true
+            }
+        }
+
+        db.Productos.findByPk(req.params.id, relations)
         .then( (data) =>{
             res.render('products-detail', {drinks: data});
         })
@@ -96,7 +101,7 @@ const controlador= {
          })
        },
 
-    delete: function(req,res){
+    delete: (req,res) =>{
         db.Productos.destroy({where: {id: req.params.id}})
         .then(()=>{
             res.redirect('/');

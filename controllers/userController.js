@@ -7,7 +7,7 @@ const controlador = {
         res.render("register")
     },
 
-    store : async  function (req, res, next) {
+    store : async   (req, res, next) => {
         let nac=  new Date(req.body.date);
         let hoy = new Date();
         let resta= hoy.getTime() - nac.getTime();
@@ -47,9 +47,9 @@ const controlador = {
     },
     
     profile:
-        function(req, res) {
+        (req, res) => {
             db.User.findByPk(req.params.id, { include:{all: true, nested: true}})
-                .then(function (usuario) {
+                .then( (usuario) => {
                    // res.send(usuario)
                     res.render('profile', { usuario });
                 })
@@ -72,7 +72,7 @@ const controlador = {
         }) 
     },
 
-    update: function(req,res){
+    update: (req,res) => {
         if (req.file) req.body.img = (req.file.path).replace('public', '');
         db.User.update(req.body, {where: { id: req.params.id }})
         .then((drinks) => {
@@ -86,13 +86,13 @@ const controlador = {
         })
     },
 
-    login: function(req, res) {
+    login: (req, res) => {
         res.render('login', { title: 'Login'});
     },
 
-    access: function(req, res, next) {
+    access: (req, res, next) => {
             db.User.findOne({ where: { username: req.body.username }})
-                .then(function(user) {
+                .then((user)  => {
                     if (!user) throw Error('User not found.')
                     if (hasher.compareSync(req.body.password, user.password)) {
                         req.session.user = user ;
@@ -104,11 +104,11 @@ const controlador = {
                         throw Error('Su usuario y/o contraseña son incorrectos')
                     }
                 })
-                .catch(function (err) {
+                .catch( (err) => {
                     next(err)
                 })
         },
-    logout:function (req,res,next) {
+    logout: (req,res,next) =>{
         req.session.user = null;
         res.clearCookie('userId');
         res.redirect('/')
@@ -117,9 +117,9 @@ const controlador = {
 module.exports = controlador
 
 
-// access: function(req, res, next) {
+// access: (req,res,next) => {
 //     db.User.findOne({ where: { username: req.body.username }})
-//         .then(function(user) {
+//         .then((user)=> {
 //             if (!user) throw Error('User not found.')
 //             if (hasher.compareSync(req.body.password, user.password)) {
 //                 req.session.user = user ;
@@ -131,7 +131,7 @@ module.exports = controlador
 //                 throw Error('Su usuario y/o contraseña son incorrectos')
 //             }
 //         })
-//         .catch(function (err) {
+//         .catch( (err)=> {
 //             next(err)
 //         })
 // },

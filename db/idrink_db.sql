@@ -21,7 +21,7 @@ description TEXT ,
 price INT,
 cover VARCHAR(255) ,
 created_at DATE,
-on update current_timestamp() DATETIME,
+updated_at DATETIME on update current_timestamp() ,
 
 FOREIGN KEY (user_id) REFERENCES users(id)
 );
@@ -40,15 +40,15 @@ FOREIGN KEY (product_id) REFERENCES products(id)
 
 INSERT INTO users
 VALUES
-(DEFAULT, "Pepito", "pepe@gmail.com", "pepeKpo", "1992-02-12" , "/images/uploads/pepe.jpg", curdate(), DEFAULT);
-(DEFAULT, "manuel", "manumartinezzavalia@gmail.com", "$2a$10$bZGqxUSuhYZISJkhBX4hT.awcfEqlsglYF.HxHEDbLNn2TstMSI3G", "2002-02-20" , "\images\uploads\f11dbb4fc8f48f0a236aea999905b62f", curdate(), DEFAULT);
+(DEFAULT, "Pepito", "pepe@gmail.com", "$2a$10$bZGqxUSuhYZISJkhBX4hT.awcfEqlsglYF.HxHEDbLNn2TstMSI3G", "1992-02-12" , "/images/uploads/pepe.jpg", curdate(), DEFAULT),
+(DEFAULT, "Manuel", "manumartinezzavalia@gmail.com", "$2a$10$bZGqxUSuhYZISJkhBX4hT.awcfEqlsglYF.HxHEDbLNn2TstMSI3G", "2002-02-20" , "/images/uploads/f11dbb4fc8f48f0a236aea999905b62f", curdate(), DEFAULT);
 
 INSERT INTO products
 VALUES
 (DEFAULT, 1, "Corona", "Cerveza Six Pack de 330ml", 1200 , "/images/uploads/product1.jpg", curdate(), curdate()),
-(DEFAULT, 1, "Fernet Branca", "Fernet de 750ml", 1300 , "/images/uploads/product2.jpg", curdate(), curdate()),
-(DEFAULT, 1, "Beefeater London", "Dry Gin de 700ml", 3000 , "/images/uploads/product3.jpg", curdate(), curdate()),
-(DEFAULT, 1, "Heineken", "Cerveza Six Pack de 473ml", 1400 , "/images/uploads/product4.jpg", curdate(), curdate()),
+(DEFAULT, 2, "Fernet Branca", "Fernet de 750ml", 1300 , "/images/uploads/product2.jpg", curdate(), curdate()),
+(DEFAULT, 2, "Beefeater London", "Dry Gin de 700ml", 3000 , "/images/uploads/product3.jpg", curdate(), curdate()),
+(DEFAULT, 2, "Heineken", "Cerveza Six Pack de 473ml", 1400 , "/images/uploads/product4.jpg", curdate(), curdate()),
 (DEFAULT, 1, "Jagermeister", "Licor Helado de 700ml", 3900 , "/images/uploads/product5.jpg", curdate(), curdate()),
 (DEFAULT, 1, "Johnnie Walker", "Whiskey Black Label de 1000ml", 6700 , "/images/uploads/product6.jpg", curdate(), curdate()),
 (DEFAULT, 1, "Havana Club", "Ron de 3 años y 750ml", 1900 , "/images/uploads/product7.jpg", curdate(), curdate()),
@@ -62,10 +62,4 @@ VALUES
 (DEFAULT, 1 , 1 , "Que rica!", curdate(), DEFAULT);
 
 
-UPDATE `idrink_db`.`products` SET `user_id` = '2' WHERE (`id` = '2');
-UPDATE `idrink_db`.`products` SET `user_id` = '2' WHERE (`id` = '3');
-UPDATE `idrink_db`.`products` SET `user_id` = '2' WHERE (`id` = '4');
-UPDATE `idrink_db`.`products` SET `created_at` = '2022-06-21' WHERE (`id` = '5');
-
 UPDATE `idrink_db`.`users` SET `password` = '$2a$10$bZGqxUSuhYZISJkhBX4hT.awcfEqlsglYF.HxHEDbLNn2TstMSI3G' WHERE (`id` = '1');
-UPDATE `idrink_db`.`users` SET `img` = '/images/uploads/f11dbb4fc8f48f0a236aea999905b62f' WHERE (`id` = '2');

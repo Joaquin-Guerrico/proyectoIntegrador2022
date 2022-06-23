@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use((req,res,next)=>{
   if (!req.session.user) {
      db.User.findByPk(req.cookies.userId)
-     .then(function(user){
+     .then((user)=>{
       req.session.user = user;
       next();
      })
@@ -44,7 +44,7 @@ app.use((req,res,next)=>{
   }
 })
 
-app.use(function(req,res,next){
+app.use((req,res,next) => {
   res.locals.user =req.session.user;
   next();
 })
@@ -55,12 +55,12 @@ app.use('/profile', usersRouter);
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) =>{
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

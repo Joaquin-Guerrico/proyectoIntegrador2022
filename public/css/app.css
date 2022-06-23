@@ -372,13 +372,13 @@ h1{
   font-size: 2.8em;
 }
 
-.product-detail-description {
+.product-detail-descriptionn {
   font-family: 'Bebas Neue', cursive;
   padding: 15px 15px 15px 40px;
   font-size: 1.8em;
   line-height: 1.5;
 }
-.product-detail-description a:hover {
+.product-detail-descriptionn a:hover {
   color: rgb(160, 183, 204);
 }
 
@@ -595,7 +595,7 @@ body{height: 900px;}
     width: 95%;
     margin: auto;
   }
-  h2{
+  .ache{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 35px;
   }

@@ -7,13 +7,13 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		
-		 
+		<h2 class='ache' >  <%= drinks.title %></h2>
 		<div class="d-flex align-items-center">
-			<h2 class='h2' class="products-title" >  <%= drinks.title %></h2 class='h2'> 
+			 
 				<div><h3   >Hecho por: <a href="/profile/detail/<%= drinks.owner.id %>"> <%= drinks.owner.username %></a></h3 > </div>
 				<!-- boton de editar -->
 				<% if (locals.user && user.id ==  drinks.user_id) { %>
-			<p class="product-detail-description">
+			<p class="product-detail-descriptionn">
 				<a href="/products/product-edit/<%= drinks.id %> ">Editar</a>
 			</p>
 			<% } %> 
